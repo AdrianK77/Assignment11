@@ -1,8 +1,8 @@
-name: A11_Automated_Test
+name: A11AutomatedTest
 on: [push]
 jobs:
   automated_test:
-    name: Automated Test
+    name: A11AutomatedTest
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -10,21 +10,15 @@ jobs:
     uses: actions/setup-python@v3
     with:
       python-version: "3.10"
-    
     - name: Test case 1 (Lowest Number in file of 10 numbers)
-      run: python3 find_lowest_number.py test_data/test1_input.txt test1_output.txt
-      
+      run: python3 find_lowest_number.py test_data/test1_input.txt test1_output.txt 
     - name: Test case 2 (1 number in file)
       run: python3 find_lowest_number.py test_data/test2_input.txt test2_output.txt
-
     - name: Test case 3 (Nothing in file)
       run: python3 find_lowest_number.py test_data/test3_input.txt test3_output.txt
-
     - name: Diff Test case 1 result
       run: diff test_data/test1_expected.txt test1_output.txt
-
     - name: Diff Test case 2 result
       run: diff test_data/test2_expected.txt test2_output.txt
-
     - name: Diff Test case 3 result
       run: diff test_data/test3_expected.txt test3_output.txt
