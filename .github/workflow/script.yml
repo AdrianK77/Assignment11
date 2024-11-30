@@ -11,11 +11,11 @@ jobs:
     with:
       python-version: "3.10"
     - name: Test case 1 (Lowest Number in file of 10 numbers)
-      run: python3 find_lowest_number.py test_data/test1_input.txt test1_output.txt 
+      run: python3 test_data/find_lowest_number.py test_data/test1_input.txt test1_output.txt 
     - name: Test case 2 (1 number in file)
-      run: python3 find_lowest_number.py test_data/test2_input.txt test2_output.txt
+      run: python3 test_data/find_lowest_number.py test_data/test2_input.txt test2_output.txt
     - name: Test case 3 (Nothing in file)
-      run: python3 find_lowest_number.py test_data/test3_input.txt test3_output.txt
+      run: python3 test_data/find_lowest_number.py test_data/test3_input.txt test3_output.txt
     - name: Diff Test case 1 result
       run: diff test_data/test1_expected.txt test1_output.txt
     - name: Diff Test case 2 result
